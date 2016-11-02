@@ -1,0 +1,56 @@
+Crear un script en ruby que permita ordenar 100 numeros tanto de mayor a menor y viceversa solicitar al usuario cual sera el orden.
+
+require 'pry'
+
+arr= Array.new(10) { rand(1..1000) }
+mayor = arr.first
+mayor_index = 0
+arr_order = []
+
+puts "quieres desendente, escribe 1 o ascendente, escribe 2"
+op = gets.to_i
+
+if op == 1
+
+	def is_mayor?(a, b)
+	  a > b ? true : false
+	end
+
+	while arr_order.length < 10
+	  10.times do |n|
+	    if is_mayor?(arr[n], mayor)
+	      mayor = arr[n]
+	      mayor_index = n
+	    end
+	  end
+	  arr[mayor_index] = 0
+	  arr_order << mayor
+	  mayor = 0
+	end
+
+if op == 2
+
+	def is_menor?(a, b)
+	  a < b ? true : false
+	end
+
+	while arr_order.length < 10
+	  10.times do |n|
+	    if is_menor?(arr[n], menor)
+	      menor = arr[n]
+	      menor_index = n
+	    end
+	  end
+	  arr[menor_index] = 0
+	  arr_order >> menor
+	  menor = 1000
+	end
+end
+
+
+
+Realizar la ejecucion con 15 grupos de numeros diferentes y tomar captura de pantalla de los resultados y agregar a su repositorio.
+
+
+
+Subir script con imagenes a github.
